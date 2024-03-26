@@ -15,11 +15,11 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #000000;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #000000;
 }
 
 body {
@@ -45,9 +45,10 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin: 1rem;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #000000;
 }
 button:focus,
 button:focus-visible {
@@ -62,7 +63,29 @@ button:focus-visible {
   a:hover {
     color: #747bff;
   }
-  button {
-    background-color: #f9f9f9;
+  .rollButton {
+    background-color: #bfe73c;
+  }
+
+  .holdButton {
+    background-color: #d55555;
   }
 }
+
+.gameDisplay {
+  display: table;
+  align-self: center;
+  height: 300px; /* Adjust height as needed */
+  width: 300px; /* Adjust height as needed */
+  outline: 1px solid #ccc; /* Optional: Just for visualization */
+}
+
+.item {
+  display: table-row;
+  text-align: center;
+  width: 150px; /* Adjust width as needed */
+  height: 100px; /* Adjust height as needed */
+  background-color: #f0f0f0; /* Example background color */
+}
+
+

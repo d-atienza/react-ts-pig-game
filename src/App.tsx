@@ -1,11 +1,8 @@
-import './App.css'
-import PigGame from './PigGame'
+import "./index.css";
+import PigGame from "./PigGame";
 
 function App() {
-
-  return (
-    <PigGame />
-  )
+  return <PigGame />;
 }
 
-export default App
+export default App;
