@@ -4,7 +4,7 @@ import { useState } from "react";
 export default function PigGame() {
   const [lastRoll, setLastRoll] = useState<number | null>(null);
   const [runningTotal, setRunningTotal] = useState<number>(0);
-  const [totalScore, setTotalScore] = useState<number>(0);
+  const [playerOneScore, setplayerOneScore] = useState<number>(0);
 
   function rollDie() {
     let rollResult = sample([1, 2, 3, 4, 5, 6]);
@@ -17,12 +17,12 @@ export default function PigGame() {
     }
   }
 
-  function holdTotalScore() {
+  function holdScore() {
     if (runningTotal != 0) {
-      setTotalScore(totalScore + runningTotal);
+      setplayerOneScore(playerOneScore + runningTotal);
       setRunningTotal(0);
     } else {
-      setTotalScore(totalScore);
+      setplayerOneScore(playerOneScore);
       setRunningTotal(0);
     }
   }
@@ -34,12 +34,12 @@ export default function PigGame() {
         <button className="rollButton" onClick={rollDie}>
           roll
         </button>
-        <button className="holdButton" onClick={holdTotalScore}>
+        <button className="holdButton" onClick={holdScore}>
           hold
         </button>
       </div>
       <div className="item">Turn Total: {runningTotal}</div>
-      <div className="item">Total Score: {totalScore}</div>
+      <div className="item">Total Score: {playerOneScore}</div>
     </div>
   );
 }
