@@ -80,12 +80,16 @@ button:focus-visible {
   outline: 1px solid #ccc; /* Optional: Just for visualization */
 }
 
+.gameTitle {
+  font-size: 2rem;
+  text-align: center;
+}
+
 .item {
   display: table-row;
   text-align: center;
-  width: 150px; /* Adjust width as needed */
-  height: 100px; /* Adjust height as needed */
   background-color: #f0f0f0; /* Example background color */
+  border: 6rem solid #213547;
 }
 
 

@@ -29,8 +29,17 @@ export default function PigGame() {
 
   return (
     <div className="gameDisplay">
-      <div className="item">{lastRoll === null ? "-" : lastRoll}</div>
+      <div className="gameTitle">Pig Game 🐖</div>
+      <div className="item">Player One Score: {playerOneScore}</div>
+      <div className="item">Player Two Score: {playerOneScore}</div>
+
       <div className="item">
+        <center>
+          <div className="item">
+            Turn Total: {runningTotal} | Last Roll:{" "}
+            {lastRoll === null ? "-" : lastRoll}
+          </div>
+        </center>
         <button className="rollButton" onClick={rollDie}>
           roll
         </button>
@@ -38,8 +47,6 @@ export default function PigGame() {
           hold
         </button>
       </div>
-      <div className="item">Turn Total: {runningTotal}</div>
-      <div className="item">Total Score: {playerOneScore}</div>
     </div>
   );
 }
