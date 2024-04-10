@@ -8,23 +8,21 @@ export default function PigGame() {
 
   function rollDie() {
     let rollResult = sample([1, 2, 3, 4, 5, 6]);
+    setLastRoll(rollResult);
     if (rollResult > 1) {
-      setLastRoll(rollResult);
-      setRunningTotal(lastRoll + runningTotal);
+      setRunningTotal(rollResult + runningTotal);
     } else {
-      setLastRoll(rollResult);
       setRunningTotal(0);
+      //toggle whose turn it is
     }
   }
 
   function holdScore() {
-    if (runningTotal != 0) {
-      setplayerOneScore(playerOneScore + runningTotal);
-      setRunningTotal(0);
-    } else {
-      setplayerOneScore(playerOneScore);
-      setRunningTotal(0);
-    }
+    // setPotatoes(prev => [...prev, 10])
+    // setplayerOneScore(x => x + runningTotal);
+
+    setplayerOneScore(playerOneScore + runningTotal);
+    setRunningTotal(0);
   }
 
   return (
