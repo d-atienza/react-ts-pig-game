@@ -60,9 +60,6 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
-  a:hover {
-    color: #747bff;
-  }
   .rollButton {
     background-color: #bfe73c;
   }
@@ -85,11 +82,18 @@ button:focus-visible {
   text-align: center;
 }
 
-.item {
+.score-box {
   display: table-row;
   text-align: center;
+  align-self: center;
   background-color: #f0f0f0; /* Example background color */
   border: 6rem solid #213547;
 }
 
+.player-turn {
+  background-color: #d55555;
+  color: #ffffff;
+  text-align: center;
+  padding: 5px;
+}
 
