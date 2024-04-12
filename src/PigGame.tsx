@@ -6,7 +6,7 @@ export default function PigGame() {
   const [runningTotal, setRunningTotal] = useState<number>(0);
   const [playerOneScore, setplayerOneScore] = useState<number>(0);
   const [playerTwoScore, setplayerTwoScore] = useState<number>(0);
-  const [playerNumber, setPlayerNumber] = useState<number>(1);
+  const [playerNumber, setPlayerNumber] = useState<1 | 2>(1);
 
   function rollDie() {
     let rollResult = sample([1, 2, 3, 4, 5, 6]);
@@ -34,10 +34,10 @@ export default function PigGame() {
   }
 
   function togglePlayer() {
-    setPlayerNumber((x) => x + 1);
+    setPlayerNumber((x) => (x === 1 ? 2 : 1));
   }
 
-  const isPlayerOnesTurn = playerNumber % 2 !== 0;
+  const isPlayerOnesTurn = playerNumber === 1;
 
   return (
     <div className="gameDisplay">
