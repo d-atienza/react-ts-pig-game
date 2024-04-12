@@ -77,3 +77,13 @@ button:focus-visible {
   padding: 5px;
 }
 
+.scoreRow {
+  display:flex;
+  justify-content: center;
+}
+
+.indicator, .scoreNumber {
+  width: 2rem;
+}
+
+

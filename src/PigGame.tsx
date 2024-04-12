@@ -37,13 +37,23 @@ export default function PigGame() {
     setPlayerNumber((x) => x + 1);
   }
 
+  const isPlayerOnesTurn = playerNumber % 2 !== 0;
+
   return (
     <div className="gameDisplay">
       <div className="gameTitle">Pig Game 🐖</div>
       <div className="score-box">
         <br />
-        <div>Player One Score: {playerOneScore}</div>
-        <div>Player Two Score: {playerTwoScore}</div>
+        <div className="scoreRow">
+          <div className="indicator">{isPlayerOnesTurn ? "🍎" : ""}</div>
+          <div className="scoreText">Player One Score: </div>
+          <div className="scoreNumber">{playerOneScore}</div>
+        </div>
+        <div className="scoreRow">
+          <div className="indicator">{isPlayerOnesTurn ? "" : "🍎"}</div>
+          <div className="scoreText">Player Two Score: </div>
+          <div className="scoreNumber">{playerTwoScore}</div>
+        </div>
         <br />
 
         <div>
@@ -59,7 +69,7 @@ export default function PigGame() {
         </button>
       </div>
       <div className="player-turn">
-        {playerNumber % 2 == 0 ? "Player Two's Turn" : "Player One's Turn"}
+        {isPlayerOnesTurn ? "Player One's Turn" : "Player Two's Turn"}
       </div>
     </div>
   );
