@@ -23,11 +23,15 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+    height: 100vh;
+
+    margin: 0;
+    background: linen;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
@@ -70,25 +74,25 @@ button:focus-visible {
 }
 
 .gameDisplay {
-  display: table;
-  align-self: center;
-  height: 300px; /* Adjust height as needed */
-  width: 300px; /* Adjust height as needed */
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  /* gap: 1rem; */
+  width: 300px; 
   outline: 1px solid #ccc; /* Optional: Just for visualization */
 }
 
 .gameTitle {
   font-size: 2rem;
+  background-color: lightgray;
   text-align: center;
 }
 
-.score-box {
-  display: table-row;
+ .score-box {
   text-align: center;
-  align-self: center;
-  background-color: #f0f0f0; /* Example background color */
-  border: 6rem solid #213547;
-}
+  background-color: white;
+} 
 
 .player-turn {
   background-color: #d55555;

@@ -45,12 +45,12 @@ export default function PigGame() {
         <div>Player One Score: {playerOneScore}</div>
         <div>Player Two Score: {playerTwoScore}</div>
         <br />
-        <center>
-          <div>
-            Last Roll: {lastRoll === null ? "-" : lastRoll} | Turn Total:{" "}
-            {runningTotal}
-          </div>
-        </center>
+
+        <div>
+          Last Roll: {lastRoll === null ? "-" : lastRoll} | Turn Total:{" "}
+          {runningTotal}
+        </div>
+
         <button className="rollButton" onClick={rollDie}>
           roll
         </button>
