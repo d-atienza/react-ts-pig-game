@@ -39,6 +39,8 @@ export default function PigGame() {
 
   const isPlayerOnesTurn = playerNumber === 1;
 
+  const isGameOver = playerOneScore >= 15 || playerTwoScore >= 15;
+
   return (
     <div className="gameDisplay">
       <div className="gameTitle">Pig Game 🐖</div>
@@ -61,15 +63,23 @@ export default function PigGame() {
           {runningTotal}
         </div>
 
-        <button className="rollButton" onClick={rollDie}>
+        <button className="rollButton" disabled={isGameOver} onClick={rollDie}>
           roll
         </button>
-        <button className="holdButton" onClick={holdScore}>
+        <button
+          className="holdButton"
+          disabled={isGameOver}
+          onClick={holdScore}
+        >
           hold
         </button>
       </div>
       <div className="player-turn">
-        {isPlayerOnesTurn ? "Player One's Turn" : "Player Two's Turn"}
+        {isGameOver
+          ? "GAME OVER"
+          : isPlayerOnesTurn
+          ? "Player One's Turn"
+          : "Player Two's Turn"}
       </div>
     </div>
   );
